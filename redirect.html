@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>جارٍ التحويل...</title>
+  <script>
+    const android = localStorage.getItem("androidLink");
+    const ios = localStorage.getItem("iosLink");
+    const fallback = localStorage.getItem("defaultLink") || "https://example.com";
+
+    if (/android/i.test(navigator.userAgent) && android) {
+      window.location.href = android;
+    } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent) && ios) {
+      window.location.href = ios;
+    } else {
+      window.location.href = fallback;
+    }
+  </script>
+</head>
+<body>
+  جاري تحويلك حسب جهازك...
+</body>
+</html>
