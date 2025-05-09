@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>إعداد الروابط</title>
+</head>
+<body>
+  <h2>إعداد روابط التحويل</h2>
+  <label>رابط أندرويد:</label><br>
+  <input type="text" id="androidLink"><br><br>
+  
+  <label>رابط آيفون:</label><br>
+  <input type="text" id="iosLink"><br><br>
+  
+  <label>رابط افتراضي (اختياري):</label><br>
+  <input type="text" id="defaultLink"><br><br>
+  
+  <button onclick="saveLinks()">حفظ الروابط</button>
+
+  <p id="status"></p>
+
+  <script>
+    function saveLinks() {
+      localStorage.setItem("androidLink", document.getElementById("androidLink").value);
+      localStorage.setItem("iosLink", document.getElementById("iosLink").value);
+      localStorage.setItem("defaultLink", document.getElementById("defaultLink").value);
+      document.getElementById("status").innerText = "تم حفظ الروابط.";
+    }
+  </script>
+</body>
+</html>
